@@ -1,5 +1,5 @@
 <?php
-    define("TITLE", "speacilized dictionary");	
+    define("TITLE", "specialized dictionary");	
 ?>
 
 <!DOCTYPE html>
