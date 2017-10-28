@@ -17,12 +17,18 @@ This README would normally document whatever steps are necessary to get your app
 * How to run tests
 * Deployment instructions
 
+# download "MAMP" for server!
+
 git clone https://oguzmertcaylar@bitbucket.org/oguzmertcaylar/specialized_dictionary.git
+
 git remote add origin https://oguzmertcaylar@bitbucket.org/oguzmertcaylar/specialized_dictionary.git
 
 git pull origin master
+
 # download the snapshot which the master is pointing at
+
 # ALWAYS PULL FIRST!
+
 git push origin master
 
 ### Contribution guidelines ###
