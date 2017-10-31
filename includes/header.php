@@ -5,9 +5,9 @@
 <html>
 	<head>
 		<link href="assets/styles.css" rel="stylesheet">
-		<script type="text/javascript" src="../assets/syntaxhighlighter/scripts/shCore.js"></script>
-		<script type="text/javascript" src="../assets/syntaxhighlighter/scripts/shBrushPhp.js"></script>
-		<link type="text/css" rel="stylesheet" href="../assets/syntaxhighlighter/styles/shCoreDefault.css"/>
+		<script type="text/javascript" src="/assets/syntaxhighlighter/scripts/shCore.js"></script>
+		<script type="text/javascript" src="/assets/syntaxhighlighter/scripts/shBrushPhp.js"></script>
+		<link type="text/css" rel="stylesheet" href="/assets/syntaxhighlighter/styles/shCoreDefault.css"/>
 		<script type="text/javascript">SyntaxHighlighter.all();</script>
 
 		<link rel="icon" href="img/logo.png" type="image/png"/>
@@ -24,7 +24,7 @@
 			</div><!-- banner -->
 
             <div id="nav">
-                <?php include('includes/nav.php'); ?>
+               	<?php include('includes/nav.php'); ?>
 			</div><!-- nav -->
 
             <div class="content">
