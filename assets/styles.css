@@ -52,6 +52,10 @@ h5,h6 {
 
 p {
 	margin: 0 0 20px;
+	color: #990000;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 20px;
+
 }
 
 a:link, a:visited {
@@ -112,7 +116,7 @@ sup {
 
 .wrapper {
 	position: relative;
-	width: 620px;
+	width: 1420px;
 	margin: 40px auto;
 	padding: 40px;
 	background: white;
@@ -432,3 +436,86 @@ input.button.next {
 	display: inline;
 	cursor: pointer;
 }
+
+
+
+/* selen baslangic */
+.container {
+    width: 100%;
+    height: 900px;
+    background: #990000;
+    margin: auto;
+    padding: 10px;
+}
+.gundem {
+    width: 15%;
+    height: 900px;
+    background: #FFEDDA;
+    float: left;
+}
+.main {
+    margin-left: 15%;
+    height: 850px;
+    background: #FCF1E7;
+}
+
+
+/* */
+header
+{
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	font-size: 25px;	
+}
+
+#info
+{
+	font-size: 18px;
+	color: #555;
+	text-align: center;
+	margin-bottom: 25px;
+}
+
+a{
+	color: #074E8C;
+}
+
+.scrollbar
+{
+	float: left;
+	height: 800px;
+	width: 195px;
+	background-image: url(image/grey_336x280.gif);
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+.force-overflow
+{
+	min-height: 450px;
+}
+
+
+#style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #D62929;
+}
+/**/
+
+
+/* */
