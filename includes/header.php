@@ -1,3 +1,7 @@
+<style>
+	body{overflow-x: hidden;}
+</style>
+
 <?php
 	include('includes/arrays.php');
 ?>
