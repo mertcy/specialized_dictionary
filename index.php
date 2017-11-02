@@ -56,7 +56,10 @@
             <p><!--main --></p>
             <h1 id="title" data-title="" data-id="" data-slug="" data-vote-url="" data-unvote-url="" data-commet-vote-url="" ><!-- main başlığı --><h1>
             <ul id="entry_list">
-                <li><!-- bu kısım entry için (up dahil) --> Lorem ipsum dolor sit amet, consectetur
+                <br></br>
+                <li class="entry-title"><!-- bu kısım entry için (up dahil) -->
+                    Lorem ipsum dolor sit amet, consectetur
+                    <br></br>
                     <div class="content"><!-- bu kısım entry için -->
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -64,11 +67,18 @@
                     </div>
                     <footer>
                         <div><!-- bu kısım face twitter up kısmı -->
-                            <span><!-- bu kısım face twitter kısmı --></span>
-                            <span><!-- bu kısım up down kısmı --></span>
                             <div>
-                                <a class="entry_date">02/11/2017</a>
-                                <a class="entry_author">YelenSel</a>
+                                <br></br>
+                                <span><!-- bu kısım face twitter kısmı -->
+                                <img class="icons" src="img/facebook-grey.png"  width="30" height="30">
+                                </span>
+                                <span><!-- bu kısım up down kısmı -->
+                                <img class="icons" src="img/twitter1.png"  width="30" height="30">
+                                </span>
+                                <div>
+                                   <a class="entry_date">02/11/2017</a>
+                                   <a class="entry_author">YelenSel</a>
+                                </div>
                             </div>
                         </div>                        
                             <div>
@@ -84,19 +94,6 @@
             </ul>
 
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
 <?php

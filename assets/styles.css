@@ -1,5 +1,22 @@
 /* Base */
-
+@font-face {
+   font-family: 'Breathe Karma';
+   src: url('../fonts/Breathe Karma.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+   font-family: 'DK Smiling Cat';
+   src: url('../fonts/DK Smiling Cat.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+   font-family: 'Breathe Karma';
+   src: url('../fonts/Breathe Karma.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -606,11 +623,7 @@ input[type=text]:focus {
 }
 
 /**/
-.entry_date , .entry_author{
-    display: inline-block;
-	text-align: center;
 
-}
 .entry_date {
 	color: red;
 	margin-left: 60%;
@@ -623,10 +636,16 @@ input[type=text]:focus {
 	font-size: 0.4em;
 
 }
+.entry_date , .entry_author{
+    display: inline-block;
+	text-align: center;
+}
  .content{
 	color: black;
 	font-size: 0.6em;
 	text-align: center;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 
  }
  .topic{
@@ -634,3 +653,12 @@ input[type=text]:focus {
 	text-align: center;
 
  }
+.icons {
+    border-radius: 50%;
+
+}
+.entry-title{
+	color: Black;
+   font-family: 'DK Smiling Cat';
+
+}
