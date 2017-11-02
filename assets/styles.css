@@ -452,6 +452,56 @@ input.button.next {
     height: 900px;
     background: #FFEDDA;
     float: left;
+}.video {
+    width: 15%;
+    height: 900px;
+    background: #FFEDDA;
+    float: left;
+}.user {
+    width: 15%;
+    height: 900px;
+    background: #FFEDDA;
+    float: left;
+}.todayinHistory {
+    width: 15%;
+    height: 900px;
+    background: #FFEDDA;
+    float: left;
+}.today {
+    width: 15%;
+    height: 900px;
+    background: #FFEDDA;
+    float: left;
+}.sport {
+    width: 15%;
+    height: 900px;
+    background: #FFEDDA;
+    float: left;
+}.relations {
+    width: 15%;
+    height: 900px;
+    background: #FFEDDA;
+    float: left;
+}.politics {
+    width: 15%;
+    height: 900px;
+    background: #FFEDDA;
+    float: left;
+}.more {
+    width: 15%;
+    height: 900px;
+    background: #FFEDDA;
+    float: left;
+}.journey {
+    width: 15%;
+    height: 900px;
+    background: #FFEDDA;
+    float: left;
+}.index2 {
+    width: 15%;
+    height: 900px;
+    background: #FFEDDA;
+    float: left;
 }
 .main {
     margin-left: 15%;
@@ -517,5 +567,22 @@ a{
 }
 /**/
 
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
 
+input[type=text]:focus {
+    width: 100%;
+}
 /* */
