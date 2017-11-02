@@ -116,7 +116,7 @@ sup {
 
 .wrapper {
 	position: relative;
-	width: 100%;
+	width: 98%;
 	margin: 40px auto;
 	padding: 40px;
 	background: white;
@@ -604,3 +604,33 @@ input[type=text]:focus {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/**/
+.entry_date , .entry_author{
+    display: inline-block;
+	text-align: center;
+
+}
+.entry_date {
+	color: red;
+	margin-left: 60%;
+	font-size: 0.4em;
+
+}
+.entry_author {
+	color: red;
+	margin-left: 60%;
+	font-size: 0.4em;
+
+}
+ .content{
+	color: black;
+	font-size: 0.6em;
+	text-align: center;
+
+ }
+ .topic{
+	color: red;
+	text-align: center;
+
+ }
