@@ -25,10 +25,19 @@
                 <a href="/" title="return to home">
                     <img src="img/bannerr.png" alt="specialized_dictionary">
                 </a>
+				<div id="explanation">
+					<small>
+            			<p>the place where you express yourself with anonimity..</p>
+					</small>
+    			</div>
 			</div><!-- banner -->
 
             <div id="nav">
                	<?php include('includes/nav.php'); ?>
 			</div><!-- nav -->
 
-            <div class="content">
+			<form>
+            	<input type="text" name="search" placeholder="Search..">
+        	</form>
+            
+			<div class="container">

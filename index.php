@@ -2,17 +2,7 @@
     define("TITLE", "home | specialized dictionary");
     include('includes/header.php');
 ?>
-        <form>
-            <input type="text" name="search" placeholder="Search..">
-        </form>
-    <div id="content">
-        <hr>
-            <h1>specialized dictionary</h1>
-            <p>is the place where you express yourself with anonimity..</p>
-        <hr>
-    </div>
-    <!-- content -->
-    <div class="container"><!--Bu kısım gündem ve main sayfa için -->
+
         <div class="index2"> <!-- bu kısım gündem için -->
             <div id="index">
                 <p> Index </p>
