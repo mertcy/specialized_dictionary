@@ -1,13 +1,9 @@
-CREATE USER specialized_user WITH PASSWORD 'spec7';
 
-CREATE SCHEMA specialized_sch;
-
---SET SCHEMA 'specialized_sch';
-SET search_path TO specialized_sch;
-
-CREATE TABLE Users (
+CREATE TABLE specialized_sch.Users (
     user_type_id int Not Null, -- 0: admin, 1: writer, 2:rookie
     user_id int Not Null,
+    user_name varchar(55),
+    password varchar(55),
     email varchar(55),
     first_name varchar(55),
     last_name varchar(55),
@@ -22,7 +18,7 @@ CREATE TABLE Users (
 );
 
 -- each user has his/her own profile
-CREATE TABLE Profile (
+CREATE TABLE specialized_sch.Profile (
     profile_id int Not Null,
     profile_content varchar(255),
     Foreign Key (profile_id) References Users(user_id),
@@ -30,7 +26,7 @@ CREATE TABLE Profile (
 );
 
 -- buddy list for each user
-CREATE TABLE Buddies ( 
+CREATE TABLE specialized_sch.Buddies ( 
     user_id int Not Null,
     buddy_id int,
     Foreign Key (user_id) References Users(user_id),
@@ -39,14 +35,14 @@ CREATE TABLE Buddies (
 );
 
 -- each user profile has its own wall
-CREATE TABLE Wall (
+CREATE TABLE specialized_sch.Wall (
     wall_id int Not Null,
     wall_content_id int,
     Foreign Key (wall_id) References Profile(profile_id),
     Primary Key (wall_id)
 );
 
-CREATE TABLE Contents (
+CREATE TABLE specialized_sch.Contents (
     content_id int,
     mentinoner_user_id int,
     content_comment_id int,
@@ -54,7 +50,7 @@ CREATE TABLE Contents (
     Primary Key (content_id)
 );
 
-CREATE TABLE Comment (
+CREATE TABLE specialized_sch.Comment (
     comment_id int,
     commenter_user_id int,
     comment_string varchar(255),
@@ -64,13 +60,13 @@ CREATE TABLE Comment (
     Primary Key (comment_id)
 );
 
-CREATE TABLE Channel (
+CREATE TABLE specialized_sch.Channel (
     channel_id int,
     channel_name varchar(255),
     Primary Key (channel_id)
 );
 
-CREATE TABLE Title (
+CREATE TABLE specialized_sch.Title (
     user_id int,
     title_id int,
     title_name varchar(255),
@@ -82,7 +78,7 @@ CREATE TABLE Title (
     Foreign Key (user_id) References Users(user_id)
 );
 
-CREATE TABLE Entry (
+CREATE TABLE specialized_sch.Entry (
     user_id int,
     title_id int,
     entry_id int,
