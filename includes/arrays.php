@@ -40,6 +40,14 @@
         "video"  => [
             "slug"  => "video.php",
             "title" => "video"
+        ],
+        "login"  => [
+            "slug"  => "login.php",
+            "title" => "log in"
+        ],
+        "logout"  => [
+            "slug"  => "logout.php",
+            "title" => "log out"
         ]
 
     ];
