@@ -1,15 +1,24 @@
 <?php
-    define("TITLE", "video | specialized dictionary");
+    define("TITLE", "sport | specialized dictionary");
     include('includes/header.php');
 ?>
 
-        <div class="video"> <!-- bu kısım gündem için -->
+        <div class="sport"> <!-- bu kısım gündem için -->
             <div id="index">
-                <?php
+                <?php    
                     include('entrytitlepaneHeader.php');
                     include('entrytitlepane.php');
                 ?>
-            </div>      
+
+            </div>
+            <ul class="topics">
+                <li><!-- bu kısım gündem başlığı için --></li>
+                <li><!-- bu kısım gündem başlığı için --></li>
+                <li><!-- bu kısım gündem başlığı için --></li>
+                <li><!-- bu kısım gündem başlığı için --></li>
+                <li><!-- bu kısım gündem başlığı için --></li>
+            </ul>
+                
         </div>
         <div class="main"><!-- bu kısım main sayfa için -->
             <p><!--main --></p>
@@ -40,7 +49,7 @@
             </ul>
 
         </div>
- </div>
+    </div>
 
 <?php
     include('includes/footer.php');

@@ -17,9 +17,9 @@
             "slug"  => "todayinHistory.php",
             "title" => "today in history"
         ],
-        "sport"  => [
-            "slug"  => "sport.php",
-            "title" => "#sport"
+        "sports"  => [
+            "slug"  => "sports.php",
+            "title" => "#sports"
         ],
         "relations"  => [
             "slug"  => "relations.php",
