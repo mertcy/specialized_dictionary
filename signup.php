@@ -10,8 +10,49 @@
     // ini_set("display_errors", 1);
 ?>
 
-    <h2>Registeration</h2> 
-        <div class = "container form-signup">
+    <h2>Registration</h2> 
+        <div class="video"> <!-- bu kısım gündem için -->
+            <div id="index">
+                <p> Hot Topics </p>
+                    <div class="scrollbar" id="style-2">
+                        <div class="force-overflow">
+                        <ul class="topics">
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                 sed do eiusmod tempor incididunt ut labore et dolore magna
+                                 aliqua. Ut enim ad minim veniam,
+                                 <!-- bu kısım gündem başlığı için --></li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                 sed do eiusmod tempor incididunt ut labore et dolore magna
+                                 aliqua. Ut enim ad minim veniam,
+                                 <!-- bu kısım gündem başlığı için --></li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                 sed do eiusmod tempor incididunt ut labore et dolore magna
+                                 aliqua. Ut enim ad minim veniam,
+                                 <!-- bu kısım gündem başlığı için --></li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                 sed do eiusmod tempor incididunt ut labore et dolore magna
+                                 aliqua. Ut enim ad minim veniam,
+                                 <!-- bu kısım gündem başlığı için --></li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                 sed do eiusmod tempor incididunt ut labore et dolore magna
+                                 aliqua. Ut enim ad minim veniam,
+                                 <!-- bu kısım gündem başlığı için --></li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                 sed do eiusmod tempor incididunt ut labore et dolore magna
+                                 aliqua. Ut enim ad minim veniam,
+                                 <!-- bu kısım gündem başlığı için --></li>
+                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                 sed do eiusmod tempor incididunt ut labore et dolore magna
+                                 aliqua. Ut enim ad minim veniam,
+                                 <!-- bu kısım gündem başlığı için --></li>
+                        </ul>
+                        </div>
+                    </div>
+
+            </div>      
+        </div>
+        <div class="main"><!-- bu kısım main sayfa için -->
+            <div class = "container form-signup">
             <form method = "post" action = "index.php">
             
             <table>
@@ -65,7 +106,15 @@
 
             </form>
         </div> <!-- /container -->
-         
+        </div>
+ </div>
+
+
+
+
+
+ 
+    </div>    
         <?php                  
                 // define variables and set to empty values
                 $name = $lastname = $email = $username = $password = $country = $city = $gender = "";

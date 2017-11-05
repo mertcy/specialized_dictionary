@@ -41,15 +41,7 @@
                     </div>
              </div>
 
-            </div>
-            <ul class="topics">
-                <li><!-- bu kısım gündem başlığı için --></li>
-                <li><!-- bu kısım gündem başlığı için --></li>
-                <li><!-- bu kısım gündem başlığı için --></li>
-                <li><!-- bu kısım gündem başlığı için --></li>
-                <li><!-- bu kısım gündem başlığı için --></li>
-            </ul>
-                
+            </div>      
         </div>
         <div class="main"><!-- bu kısım main sayfa için -->
             <p><!--main --></p>
