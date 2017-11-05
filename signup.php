@@ -1,5 +1,5 @@
 <?php
-    define("TITLE", "log in | specialized dictionary");
+    define("TITLE", "sign up | specialized dictionary");
     include('includes/header.php');
     ob_start();
     session_start();
@@ -12,7 +12,7 @@
 
     <h2>Registeration</h2> 
         <div class = "container form-signup">
-            <form method = "post" action = "/php/php_form_introduction.htm">
+            <form method = "post" action = "index.php">
             
             <table>
                 <tr>
@@ -35,10 +35,10 @@
 
                 </tr>
                     <td>password:</td>
-                    <td><input type="password" placeholder="enter password:" name="psw" required></td>
+                    <td><input type="password" placeholder="enter password:" name="pwd" required></td>
 
                     <td>repeat password:</td>
-                    <td><input type="password" placeholder="repeat password" name="psw-repeat" required></td>
+                    <td><input type="password" placeholder="repeat password" name="pwd-repeat" required></td>
    
                 <tr>
                     <td>Gender:</td>
@@ -81,29 +81,36 @@
 
 
                 // attempt a connection
-                $dbh = pg_connect("host=localhost dbname=specialized_db user=specialized_user password=spec7");
-                if (!$dbh) {
+                $dbconn = pg_connect("host=localhost dbname=specialized_db user=specialized_user password=spec7");
+                if (!$dbconn) {
                     die("Error in connection: " . pg_last_error());
                 }
+
                 date_default_timezone_set('Europe/Istanbul');
                 $today = date('d.m.Y H:i:s', time());
 
                 // execute query
-                $sql = "INSERT INTO specialized_sch.users VALUES (2, mt_rand(0,100000000), $username, $password, $email, 
-                        $firstname, $lastname, $gender, null, $today, null, null, 0, 0)";
+                $qry = "INSERT INTO specialized_sch.users (user_type_id, user_id, user_name, password, email, first_name, last_name,
+                                                            gender, birth_date, sign_up_date, country, city, rank_point, coin)
+                                                            VALUES (2, mt_rand(0,100000000), '$username', '$password', '$email', 
+                                                    '$name', '$lastname', '$gender', null, TIMESTAMP '$today', null, null, 0, 0)";
                 // default user 2 is rookie, with 0 rank points and 0 coins        
 
-                $result = pg_query($dbh, $sql);
+                $insert = pg_query_params($dbconn, $qry);
 
-                if (!$result) {
+                if (pg_query($dbconn,$insert)) {
+                    echo "Data entered successfully. ";
+                }
+                else {
+                    echo "Data entry unsuccessful. ";
                     die("Error in SQL query: " . pg_last_error());
                 }
 
                 // free memory
-                pg_free_result($result);
+                pg_free_result($insert);
 
                 // close connection
-                pg_close($dbh);
+                pg_close($dbconn);
 
                 function test_input($data) {   
                     $data = trim($data); 
