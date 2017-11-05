@@ -41,6 +41,10 @@
             "slug"  => "video.php",
             "title" => "video"
         ],
+        "signup"  => [
+            "slug"  => "signup.php",
+            "title" => "sign up"
+        ],
         "login"  => [
             "slug"  => "login.php",
             "title" => "log in"
