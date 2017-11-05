@@ -11,7 +11,7 @@
 ?>
 
       <h2>Enter Username and Password</h2>
-    
+    <div class = "container2">
     <div class="video"> <!-- bu kısım gündem için -->
             <div id="index">
                 <p> Hot Topics </p>
@@ -52,7 +52,7 @@
 
             </div>      
         </div>
-      <div class = main>  
+      <div class = "main">  
       <div class = "container form-signin">
          
          <?php
@@ -124,7 +124,7 @@
       </div>
       </div> <!-- /container -->
     </div>  
-
+    </div>
 
 <?php
     include('includes/footer.php');

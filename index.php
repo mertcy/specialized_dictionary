@@ -4,6 +4,8 @@
 ?>
 
         <div class="index2"> <!-- bu kısım gündem için -->
+                <button type="button"  class="createbtn">Create Entry</button>
+
             <div id="index">
                 <p> Index </p>
                     <div class="scrollbar" id="style-2">
@@ -40,8 +42,8 @@
                             </ul>
                         </div>
                     </div>
-                </div>   
-            </div>
+            </div>   
+        </div>
         <div class="main"><!-- bu kısım main sayfa için -->
             <p><!--main --></p>
             <h1 id="title" data-title="" data-id="" data-slug="" data-vote-url="" data-unvote-url="" data-commet-vote-url="" ><!-- main başlığı --><h1>
