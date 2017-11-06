@@ -3,6 +3,7 @@
 </style>
 
 <?php
+	session_start();
 	include('includes/arrays.php');
 ?>
 <!DOCTYPE html>
@@ -33,9 +34,11 @@
 			</div><!-- banner -->
 
             <div id="nav">
-               	<?php include('includes/nav.php'); ?>
+				<?php
+					include('includes/nav.php');
+					echo "current user: " . $_SESSION['currentuser'];
+				?>
 			</div><!-- nav -->
-
 			<form>
             	<input type="text" name="search" placeholder="Search..">
         	</form>
