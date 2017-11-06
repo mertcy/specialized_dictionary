@@ -12,7 +12,11 @@
             </div>   
         </div>
         <?php
-            echo "entries";
+            
+
+
+
+            
         ?>
 
 <?php

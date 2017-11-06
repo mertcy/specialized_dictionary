@@ -25,7 +25,23 @@
       <div class = "main">  
       <div class = "container form-signin">
          
-         <?php
+ 
+
+        <div class = "containerr">
+            <form class = "form-signin" role = "form"
+                action = "loginRedirect.php" method = "post">
+                <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
+                <input type = "text" class = "form-control" 
+                name = "username" placeholder = "..username" 
+                required autofocus></br>
+                <input type = "password" class = "form-control"
+                name = "password" placeholder = "..password" required>
+                <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
+                name = "login">log in</button>
+            </form>       
+        </div>
+
+        <?php
             $msg = '';
             
             if (isset($_POST['login']) && !empty($_POST['username']) 
@@ -56,6 +72,19 @@
                   $password_db = $row[3];
                 }
 
+                if ($_POST['username'] == $username_db && 
+                    $_POST['password'] == $password_db) {
+                    
+                        $_SESSION['valid'] = true;
+                        $_SESSION['timeout'] = time();
+                        $_SESSION['username'] = $username_db;
+                        $_SESSION['password'] = $password_db;
+                        include('loginRedirect.php');
+                }else {
+                    $msg = '! wrong username - password combination';
+                    echo $msg;      
+                }
+
                 // free memory
                 pg_free_result($result);
 
@@ -63,32 +92,9 @@
                 pg_close($dbh);
         
 
-               if ($_POST['username'] == $username_db && 
-                  $_POST['password'] == $password_db) {
-                  $_SESSION['valid'] = true;
-                  $_SESSION['timeout'] = time();
-                  $_SESSION['username'] = $username_db;
-                  
-                  echo 'You have entered valid username and password';
-               }else {
-                  $msg = 'Wrong username or password';
-               }
+
             }
         ?>
-
-        <div class = "containerr">
-            <form class = "form-signin" role = "form" 
-                action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method = "post">
-                <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
-                <input type = "text" class = "form-control" 
-                name = "username" placeholder = "..username" 
-                required autofocus></br>
-                <input type = "password" class = "form-control"
-                name = "password" placeholder = "..password" required>
-                <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
-                name = "login">log in</button>
-            </form>       
-        </div>
 
 
       </div>

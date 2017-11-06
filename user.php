@@ -1,4 +1,5 @@
 <?php
+    session_start();
     define("TITLE", "user | specialized dictionary");
     include('includes/header.php');
 ?>
@@ -7,6 +8,9 @@
             <div id="index">
                 <?php
                     include('entrytitlepaneHeader.php');
+
+                    echo $_SESSION['currentuser'];
+                  
                     include('entrytitlepane.php');
                 ?>
 
