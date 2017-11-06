@@ -43,4 +43,4 @@
             	<input type="text" name="search" placeholder="Search..">
         	</form>
             
-			<div class="container">
+			<div class="container2">

@@ -12,7 +12,7 @@
 
       <h2>Enter Username and Password</h2>
     <div class = "container2">
-    <div class="video"> <!-- bu kısım gündem için -->
+        <div class="video"> <!-- bu kısım gündem için -->
             <div id="index">
                 <?php
                     define("TITLE", "#trending");
