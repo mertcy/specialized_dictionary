@@ -22,7 +22,7 @@
         </div>
         <div class="main"><!-- bu kısım main sayfa için -->
             <div class = "container form-signup">
-            <form method = "post" action = "index.php">
+            <form method = "post" action = "signupRedirect.php">
             
             <table>
                 <tr>
@@ -79,66 +79,8 @@
  </div>
 
 
-
-
-
- 
     </div>    
-        <?php                  
-                // define variables and set to empty values
-                $name = $lastname = $email = $username = $password = $country = $city = $gender = "";
 
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {   
-                    $name = test_input($_POST["name"]); 
-                    $lastname = test_input($_POST["lastname"]);  
-                    $email = test_input($_POST["email"]);  
-                    $username = test_input($_POST["usr"]);  
-                    $password = test_input($_POST["pwd"]); 
-                    $gender = test_input($_POST["gender"]);
-                }
-
-
-                // attempt a connection
-                $dbconn = pg_connect("host=localhost dbname=specialized_db user=specialized_user password=spec7");
-                if (!$dbconn) {
-                    die("Error in connection: " . pg_last_error());
-                }
-
-                date_default_timezone_set('Europe/Istanbul');
-                $today = date('d.m.Y H:i:s', time());
-
-                // execute query
-                $qry = "INSERT INTO specialized_sch.users (user_type_id, user_id, user_name, password, email, first_name, last_name,
-                                                            gender, birth_date, sign_up_date, country, city, rank_point, coin)
-                                                            VALUES (2, mt_rand(0,100000000), '$username', '$password', '$email', 
-                                                    '$name', '$lastname', '$gender', null, TIMESTAMP '$today', null, null, 0, 0)";
-                // default user 2 is rookie, with 0 rank points and 0 coins        
-
-                $insert = pg_query_params($dbconn, $qry);
-
-                if (pg_query($dbconn,$insert)) {
-                    echo "Data entered successfully. ";
-                }
-                else {
-                    echo "Data entry unsuccessful. ";
-                    die("Error in SQL query: " . pg_last_error());
-                }
-
-                // free memory
-                pg_free_result($insert);
-
-                // close connection
-                pg_close($dbconn);
-
-                function test_input($data) {   
-                    $data = trim($data); 
-                    $data = stripslashes($data);  
-                    $data = htmlspecialchars($data);
-   
-                    return $data;
-                }
-
-        ?>
 
 <?php
     include('includes/footer.php');
