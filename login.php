@@ -56,11 +56,7 @@
                 // execute query
                 $sql = "SELECT * FROM specialized_sch.users";
 
-                
-
                 $result = pg_query($dbh, $sql);
-
-                echo $result;
 
                 if (!$result) {
                     die("Error in SQL query: " . pg_last_error());
@@ -71,6 +67,7 @@
                 $username = $_POST['username'];
                 $password = $_POST['password'];
                 $_SESSION['valid'] = false;
+                $looked = false;
 
                 while ($row = pg_fetch_row($result)) {
                     $username_db = $row[2];
@@ -81,12 +78,13 @@
                         echo "<script type='text/javascript'>alert('logged in as $username');</script>";
                         include('loginRedirect.php');
                     }
+                    $looked = true;
                 }
 
-                if($_SESSION['valid'] == false)
-                    $msg = '! wrong username - password combination';
-                    echo $msg;      
-                }
+                if(($_SESSION['valid'] == false) && ($looked == true)) {
+                    echo "<script type='text/javascript'>alert('! wrong username - password combination');</script>";
+                }   
+            }
 
 
                 // free memory

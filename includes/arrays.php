@@ -5,10 +5,6 @@
             "slug"  => "index.php",
             "title" => "home"
         ],
-        "user"  => [
-            "slug"  => "user.php",
-            "title" => "user"
-        ],
         "today"  => [
             "slug"  => "today.php",
             "title" => "today"
