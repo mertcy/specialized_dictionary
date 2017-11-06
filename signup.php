@@ -49,12 +49,24 @@
 
                     <td>repeat password:</td>
                     <td><input type="password" placeholder="repeat password" name="pwd-repeat" required></td>
-   
                 <tr>
                     <td>Gender:</td>
                     <td>
-                        <input type = "radio" name = "gender" value = "m">male
-                        <input type = "radio" name = "gender" value = "f">female
+                <ul>
+                    <li>
+                        <input type="radio" id="f-option" name="selector">
+                        <label for="f-option">male</label>
+    
+                        <div class="check"></div>
+                    </li>
+                    <li>
+                        <input type="radio" id="s-option" name="selector">
+                        <label for="s-option">female</label>
+    
+                        <div class="check"><div class="inside"></div></div>
+                     </li>
+
+                </ul>   
                     </td>
                 </tr>
    

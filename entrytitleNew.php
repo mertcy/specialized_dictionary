@@ -17,10 +17,12 @@
     <div>
         <form action="/action_page.php">
             <label for="fname">Entry Name</label>
+            <br></br>
             <input type="text" id="fname" name="firstname" placeholder="Entry name..">
             <br></br>
             <label for="fname">Entry Text</label>
-            <input type="text" id="fname" name="firstname" placeholder="Entry Text">
+            <textarea rows="20" cols="12250">Entry Text..
+            </textarea>
         </form>
     </div>         
 </div>
