@@ -29,7 +29,7 @@
 
         <div class = "containerr">
             <form class = "form-signin" role = "form"
-                action = "loginRedirect.php" method = "post">
+                method = "post">
                 <h4 class = "form-signin-heading"><?php echo $msg; ?></h4>
                 <input type = "text" class = "form-control" 
                 name = "username" placeholder = "..username" 
@@ -55,35 +55,39 @@
 
                 // execute query
                 $sql = "SELECT * FROM specialized_sch.users";
+
+                
+
                 $result = pg_query($dbh, $sql);
+
+                echo $result;
 
                 if (!$result) {
                     die("Error in SQL query: " . pg_last_error());
                 }
 
 
-                $username_db;
-                $password_db;
+                $username_db = $password_db = "";
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $_SESSION['valid'] = false;
 
-                // iterate over result set
-                // print each row
-                while ($row = pg_fetch_array($result)) {
-                  $username_db = $row[2];
-                  $password_db = $row[3];
-                }
-
-                if ($_POST['username'] == $username_db && 
-                    $_POST['password'] == $password_db) {
-                    
+                while ($row = pg_fetch_row($result)) {
+                    $username_db = $row[2];
+                    $password_db = $row[3];
+                    if(($username == $username_db) && ($password == $password_db)) { // user credentials are correct
                         $_SESSION['valid'] = true;
                         $_SESSION['timeout'] = time();
-                        $_SESSION['username'] = $username_db;
-                        $_SESSION['password'] = $password_db;
+                        echo "<script type='text/javascript'>alert('logged in as $username');</script>";
                         include('loginRedirect.php');
-                }else {
+                    }
+                }
+
+                if($_SESSION['valid'] == false)
                     $msg = '! wrong username - password combination';
                     echo $msg;      
                 }
+
 
                 // free memory
                 pg_free_result($result);
@@ -93,7 +97,7 @@
         
 
 
-            }
+            
         ?>
 
 
