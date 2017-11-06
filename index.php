@@ -14,24 +14,29 @@
         <div class="main"><!-- bu kısım main sayfa için -->
             <p><!--main --></p>
             <h1 id="title" data-title="" data-id="" data-slug="" data-vote-url="" data-unvote-url="" data-commet-vote-url="" ><!-- main başlığı --><h1>
-            <ul id="entry_list">
+                <?php    
+                    include('entryshow.php');
+                ?>
+            
+            
+            <!--<ul id="entry_list">
                 <br></br>
-                <li class="entry-title"><!-- bu kısım entry için (up dahil) -->
+                <li class="entry-title">
                     Lorem ipsum dolor sit amet, consectetur
                     <br></br>
-                    <div class="content"><!-- bu kısım entry için -->
+                    <div class="content">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt ut labore et dolore magna
                         aliqua. Ut enim ad minim veniam,
                     </div>
                     <footer>
-                        <div><!-- bu kısım face twitter up kısmı -->
+                        <div>
                             <div>
                                 <br></br>
-                                <span><!-- bu kısım face twitter kısmı -->
+                                <span>
                                 <img class="icons" src="img/facebook-grey.png"  width="30" height="30">
                                 </span>
-                                <span><!-- bu kısım up down kısmı -->
+                                <span>
                                 <img class="icons" src="img/twitter1.png"  width="30" height="30">
                                 </span>
                                 <div>
@@ -44,13 +49,13 @@
                                 <a class="dropdown_toggle"> </a>
                                 <ul class="dropdown_menu_report">
                                     <li>
-                                        <a class="report_link"><!--şikayet--></a>
+                                        <a class="report_link"></a>
                                     </li>
                                 </ul>
                             </div>
                     </footer>
                 </li>
-            </ul>
+            </ul>-->
 
         </div>
     </div>
