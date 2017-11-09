@@ -75,6 +75,9 @@
                     if(($username == $username_db) && ($password == $password_db)) { // user credentials are correct
                         $_SESSION['valid'] = true;
                         $_SESSION['timeout'] = time();
+
+                        $_SESSION['userid'] = $row[1];
+
                         echo "<script type='text/javascript'>alert('logged in as $username');</script>";
                         include('loginRedirect.php');
                     }
