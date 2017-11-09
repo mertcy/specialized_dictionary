@@ -1,6 +1,7 @@
 <?php
     define("TITLE", "home | specialized dictionary");
     include('includes/header.php');
+    session_start();
 ?>
 
 <div class="index2"> <!-- bu kısım gündem için -->
@@ -15,24 +16,25 @@
 <div class="main2">
     <br></br><br></br><br></br><br></br><br></br>
     <div>
-        <form action="/action_page.php">
-            <label for="fname">Entry Name</label>
-            <br></br>
-            <input type="text" id="fname" name="firstname" placeholder="Entry name..">
-            <br></br>
-            <label for="fname">Entry Text</label>
-            <textarea rows="20" cols="12250">Entry Text..
-            </textarea>
+
+
+    <div class = "containerrr">
+            <form class="form-group" role = "form"
+                method = "post" action="addentry.php">
+                <br></br>
+                <input type="text" id="ename" name="entrytitle" placeholder="write about something.." required>
+                <br></br>
+                <textarea id="econtent" name="entrycontent" placeholder="write more about it.." rows="20" cols="12250" align="left" required></textarea>
+                <button class = "btn btn-lg btn-primary btn-block" type = "submit" 
+                name = "entry_create">submit</button>
+            </form>       
+        </div>
+
+
         </form>
     </div>         
 </div>
-        <?php
-            
 
-
-
-            
-        ?>
 
 <?php
     include('includes/footer.php');

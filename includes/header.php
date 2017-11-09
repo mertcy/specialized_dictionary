@@ -40,7 +40,7 @@
 				?>
 			</div><!-- nav -->
 			<form>
-            	<input type="text" name="search" placeholder="Search..">
+            	<input type="text" name="search" placeholder="search..">
         	</form>
             
 			<div class="container2">

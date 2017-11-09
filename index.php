@@ -11,7 +11,7 @@
                 ?>
             </div>   
         </div>
-        <div class="main"><!-- bu kısım main sayfa için -->
+        <div class="main"  > <!-- bu kısım main sayfa için -->
             <p><!--main --></p>
             <h1 id="title" data-title="" data-id="" data-slug="" data-vote-url="" data-unvote-url="" data-commet-vote-url="" ><!-- main başlığı --><h1>
                 <?php    

@@ -1,9 +1,11 @@
 <?php
-$title_id = $_GET['title_id'];
+    session_start();
+    $title_id = $_GET['title_id'];
 ?>
 <ul id="entry_list">
                 <br></br>
 				<?php
+                    if (isset($_GET['title_id'])) {
                                         // attempt a connection
                                         $dbh = pg_connect("host=localhost dbname=specialized_db user=specialized_user password=spec7");
                                         if (!$dbh) {
@@ -20,10 +22,11 @@ $title_id = $_GET['title_id'];
 								}
 							
 							while ($row = pg_fetch_row($result)) {
-							$sql2 = "SELECT first_name,last_name FROM specialized_sch.users where user_id=$row[0]";
-							$result2 = pg_query($dbh, $sql2);							
-							$row2 = pg_fetch_row($result2);
-							?>
+							    $sql2 = "SELECT first_name,last_name FROM specialized_sch.users where user_id=$row[0]";
+							    $result2 = pg_query($dbh, $sql2);							
+                                $row2 = pg_fetch_row($result2);
+                    
+				?>
                 <li class="entry-title"><!-- bu kısım entry için (up dahil) -->
                     <?php echo $row[8] ?>
                     <br></br>
@@ -61,5 +64,6 @@ $title_id = $_GET['title_id'];
                                                     
                                  // close connection
                                  pg_close($dbh);
-						?>
+                            }
+                        ?>
             </ul>
