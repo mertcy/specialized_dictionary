@@ -36,7 +36,12 @@
             <div id="nav">
 				<?php
 					include('includes/nav.php');
-					echo "current user: " . $_SESSION['currentuser'];
+					if(!isset($_SESSION['userid'])) {
+						include('sessionNoUser.php');
+					} else if(isset($_SESSION['userid'])){
+						include('sessionUser.php');
+					}
+					
 				?>
 			</div><!-- nav -->
 			<form>
