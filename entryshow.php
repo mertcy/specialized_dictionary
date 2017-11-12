@@ -2,6 +2,9 @@
     session_start();
     $title_id = $_GET['title_id'];
 ?>
+
+<div class="scrollbar" id="style-2">
+<div class="force-overflow">
 <ul id="entry_list">
                 <br></br>
 				<?php
@@ -11,7 +14,13 @@
                                         if (!$dbh) {
                                             die("Error in connection: " . pg_last_error());
                                         }
-						
+                                        $sql = "SELECT title_name FROM specialized_sch.title where title_id=$title_id";
+                                        $selected_title = pg_query($dbh, $sql);
+                                        $row2 = pg_fetch_row($selected_title);
+                                        $selected_title = $row2[0];
+                                        if (!$selected_title) {
+                                            die("Error in SQL query: " . pg_last_error());
+                                        }                                                                              
 							// execute query
 								$sql = "SELECT * FROM specialized_sch.entry where title_id=$title_id order by entry_creation_date desc";
 
@@ -19,15 +28,23 @@
 
 								if (!$result) {
 									die("Error in SQL query: " . pg_last_error());
-								}
+                                }
+
+                                
+                                ?>
+
+                                <h4 align="middle"><?php echo $selected_title;?></h4>
+
+                                <?php
 							
 							while ($row = pg_fetch_row($result)) {
 							    $sql2 = "SELECT first_name,last_name FROM specialized_sch.users where user_id=$row[0]";
 							    $result2 = pg_query($dbh, $sql2);							
                                 $row2 = pg_fetch_row($result2);
                     
-				?>
-                <li class="entry-title"><!-- bu kısım entry için (up dahil) -->
+				?>        
+                <li class="entry-title"><!-- bu kısım entry için (up dahil) --> 
+                                <br></br>
                     <?php echo $row[8] ?>
                     <br></br>
                     <div class="content"><!-- bu kısım entry için -->
@@ -67,3 +84,5 @@
                             }
                         ?>
             </ul>
+</div>            
+</div>        
