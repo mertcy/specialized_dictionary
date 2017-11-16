@@ -13,7 +13,7 @@
     $user_id = $_SESSION['userid'];
     
     date_default_timezone_set('Europe/Istanbul');
-    $today = date('d.m.Y H:i:s', time());
+    $today = date('Y-m-d H:i:s', time());
 
     $qry = "SELECT t.title_id FROM specialized_sch.title AS t WHERE title_name = '" .$title_name. "'";
     $result = pg_query($dbconn, $qry);
