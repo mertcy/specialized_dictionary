@@ -21,7 +21,7 @@
 					}
 					else 
 					{
-						echo "entryler";
+						include('mainpage.php');
 					}
                 ?>
             
