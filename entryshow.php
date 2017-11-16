@@ -53,6 +53,25 @@
                     <footer>
                         <div><!-- bu kısım face twitter up kısmı -->
                             <div>
+                            <?php
+								if ($row[0]==$_SESSION['userid'])
+								{
+								?>
+								<a href="formEdit.php?entry_id=<?php echo $row[2]?>"><img class="icons" src="img/pen.png"  width="30" height="30"></a>
+								<?php
+								}
+								
+								?>
+								
+								<?php
+								if ($row[0]==$_SESSION['userid'])
+								{
+								?>
+								<a href="entrydelete.php?entry_id=<?php echo $row[2]?>"><img class="icons" src="img/delete.jpg"  width="30" height="30"></a>
+								<?php
+								}
+								
+								?>
                                 <br></br>
                                 <span><!-- bu kısım face twitter kısmı -->
                                 <img class="icons" src="img/facebook-grey.png"  width="30" height="30">
