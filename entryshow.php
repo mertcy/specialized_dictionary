@@ -14,15 +14,23 @@
                                         if (!$dbh) {
                                             die("Error in connection: " . pg_last_error());
                                         }
-                                        $sql = "SELECT title_name FROM specialized_sch.title where title_id=$title_id";
+
+                                        $sql = "SELECT title_name FROM specialized_sch.title where title_id=$title_id";                                        
                                         $selected_title = pg_query($dbh, $sql);
                                         $row2 = pg_fetch_row($selected_title);
                                         $selected_title = $row2[0];
                                         if (!$selected_title) {
                                             die("Error in SQL query: " . pg_last_error());
-                                        }                                                                              
-							// execute query
-								$sql = "SELECT * FROM specialized_sch.entry where title_id=$title_id order by entry_creation_date desc";
+                                        }
+                                        
+                                        
+                                        $sql = "";
+                                        if(!isset($_SESSION['userid'])) {
+                                            $sql = "SELECT e.* FROM specialized_sch.entry AS e, specialized_sch.users AS u
+                                                    WHERE e.title_id=$title_id AND e.user_id = u.user_id AND u.user_type_id <> 2 order by e.entry_creation_date desc";
+                                        } else if(isset($_SESSION['userid'])) {
+                                            $sql = "SELECT * FROM specialized_sch.entry where title_id=$title_id order by entry_creation_date desc";
+                                        }        
 
 								$result = pg_query($dbh, $sql);
 
