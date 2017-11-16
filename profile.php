@@ -16,11 +16,11 @@
         <div class="userpage">
             <p><!--main --></p>
             <h4><?php  echo $cur_usr;?><h4>
+
+            <div class=user_item>
             <?php    
                 include('profilePane.php');
             ?>
-            <div class=user_item>
-
 
 
             </div>     
