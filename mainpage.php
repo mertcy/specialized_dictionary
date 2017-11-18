@@ -13,7 +13,17 @@
                                             die("Error in connection: " . pg_last_error());
                                         }
 
-										$sql ="SELECT * FROM ( SELECT user_id,title_id,entry_id, entry_body,entry_creation_date,entry_edited_date, ROW_NUMBER ( ) OVER (PARTITION BY title_id ORDER BY entry_edited_date desc) FROM entry ) x WHERE ROW_NUMBER BETWEEN 1 AND 1";
+                                        $sql = "";
+                                        if(!isset($_SESSION['userid'])) {
+                                            $sql ="SELECT * FROM ( SELECT e.user_id, e.title_id, e.entry_id, e.entry_body,
+                                                    e.entry_creation_date, e.entry_edited_date, ROW_NUMBER ( )
+                                                    OVER (PARTITION BY e.title_id ORDER BY e.entry_edited_date desc)
+                                                    FROM specialized_sch.entry AS e, specialized_sch.users AS u
+                                                    WHERE e.user_id = u.user_id AND u.user_type_id <> 2)
+                                                    x WHERE ROW_NUMBER BETWEEN 1 AND 1;";                                                                                                                   
+                                        } else if(isset($_SESSION['userid'])) {
+                                            $sql ="SELECT * FROM ( SELECT user_id,title_id,entry_id, entry_body,entry_creation_date,entry_edited_date, ROW_NUMBER ( ) OVER (PARTITION BY title_id ORDER BY entry_edited_date desc) FROM entry ) x WHERE ROW_NUMBER BETWEEN 1 AND 1";
+                                        }									
 										
                                         $result = pg_query($dbh, $sql);
                                       
