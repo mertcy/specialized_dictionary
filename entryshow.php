@@ -79,7 +79,15 @@
 								<?php
 								}
 								
-								?>
+                                if(isset($_SESSION['userid'])) {
+                                ?>
+                                    <a href="entryupvote.php?entry_id=<?php echo $row[2]?>"><img class="icons" src="img/upvote.png"  width="30" height="30"> </a>								
+								    <a href="entrydownvote.php?entry_id=<?php echo $row[2]?>"><img class="icons" src="img/downvote.png"  width="30" height="30"> </a>								
+								    <img class="icons" src="img/favourites.png"  width="30" height="30">
+                                <?php
+                                }
+                                ?>
+
                                 <span><!-- bu kısım face twitter kısmı -->
                                 <img class="icons" src="img/facebook-grey.png"  width="30" height="30">
                                 </span>
