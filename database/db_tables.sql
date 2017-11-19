@@ -91,3 +91,12 @@ CREATE TABLE specialized_sch.Entry (
     Foreign Key (title_id) References Title(title_id),
     Foreign Key (user_id) References Users(user_id)
 );
+
+CREATE TABLE specialized_sch.Voters (
+    vote_type int Not Null, -- 0: favorite, 1: upvote, 2: downvote
+    entry_id int Not Null,
+    user_id int,
+    Foreign Key (entry_id) References Entry(entry_id),
+    Foreign Key (user_id) References Users(user_id),
+    Primary Key (vote_type, entry_id)
+);
