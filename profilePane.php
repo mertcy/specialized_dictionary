@@ -77,7 +77,7 @@
 <?php
     $userItems = [
         "entries" => [
-            "slug"  => "entries.php",
+            "slug"  => "profileentries.php",
             "title" => "entries"
         ],
         "favorites"  => [
