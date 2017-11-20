@@ -19,10 +19,15 @@
 					{
                     include('entryshow.php');
 					}
+					elseif(isset($_GET['show']) && $_GET['show'] == 'top')
+                    {
+                        include('topentries.php');
+                    }
 					else 
 					{
 						include('mainpage.php');
 					}
+
                 ?>
             
             
