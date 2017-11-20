@@ -28,6 +28,55 @@
                 </form>       
             </div>
 
+
+            <?php
+             $dbh = pg_connect("host=localhost dbname=specialized_db user=specialized_user password=spec7");
+                                                   if (!$dbh) {
+                                                       die("Error in connection: " . pg_last_error());
+                                                   }
+           
+                                                   $sql = "SELECT c.* FROM specialized_sch.wall AS w, specialized_sch.comment AS c
+                                                            WHERE c.comment_id = w.comment_id AND w.wall_id = c.commenter_user_id";                                        
+                                                   $qry= pg_query($dbh, $sql);
+                                                  
+                                           
+                                           ?>
+           
+                                           <h4 align="middle"><?php echo $selected_title;?></h4>
+           
+                                           <?php
+                                       
+                                       while ($row = pg_fetch_row($qry)) {
+                               
+                           ?>        
+                           <li class="comments"><!-- bu kısım entry için (up dahil) --> 
+                                           <br></br>
+                               
+                               <br></br>
+                               <div class="content"><!-- bu kısım entry için -->
+                                    <?php echo $row[1] ?>
+                                    <br></br>
+                                    <?php echo $row[2] ?>
+                                    <br></br>
+                                    <?php echo $row[3] ?>
+                                    <br></br>
+                                    <?php echo $row[4] ?>
+                                    <br></br>
+                               </div>
+
+
+                                   </li> <?php }
+                                            // free memory
+                                            pg_free_result($result);
+                                                               
+                                            // close connection
+                                            pg_close($dbh);
+                                                                           
+            ?>
+
+
+
+
             </div>  
 
 
