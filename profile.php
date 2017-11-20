@@ -22,10 +22,10 @@
                 include('profilePane.php');
             ?>
 
-
             </div>     
             
-            
+            <div id="profilenav" class="profilenav">
+            <div>
 
         </div>
     </div>

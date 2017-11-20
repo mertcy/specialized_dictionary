@@ -103,10 +103,10 @@
     ];
 ?>
 
-<div id="myUserPanel" class="userPanel-content">
+<div id="myUserPanel" class="userPanel-content" onclick=userPanelElement()>
     <?php
         foreach($userItems as $user_item) {
-            echo "<a href=\"$user_item[slug]\">$user_item[title]</a> ";
+            echo "<a href='#'>$user_item[title]</a>";
         }
     ?>
 </div>
@@ -120,6 +120,8 @@
             }
         ?>
     </div>
+</div>
+
 </div>
 
 <script>
@@ -145,6 +147,30 @@ window.onclick = function(event) {
 }
 </script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>                       
+<script>       
+        $(document).ready(function(){
+            var c = document.getElementById("myUserPanel").childNodes;
 
-</div>
+            $(c[1]).click(function(){
+                $.ajax({
+                    type: 'POST',
+                    url: 'entries.php',
+                    success: function(data) {
+                        $("#profilenav").load("entries.php");
+                    }
+                });
+            });
+            $(c[2]).click(function(){
+                $.ajax({
+                    type: 'POST',
+                    url: 'index.php',
+                    success: function(data) {
 
+                    }
+                });
+            });
+
+        });
+
+</script>
