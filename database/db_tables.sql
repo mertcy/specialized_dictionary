@@ -31,7 +31,7 @@ CREATE TABLE specialized_sch.Wall (
     wall_id int Not Null,
     comment_id int UNIQUE,
     Foreign Key (wall_id) References Users(user_id),
-    Primary Key (wall_id)
+    Primary Key (wall_id, comment_id)
 );
 
 CREATE TABLE specialized_sch.Comment (
