@@ -17,14 +17,6 @@ CREATE TABLE specialized_sch.Users (
     Primary Key (user_id)
 );
 
--- each user has his/her own profile
-CREATE TABLE specialized_sch.Profile (
-    profile_id int Not Null,
-    profile_content varchar(255),
-    Foreign Key (profile_id) References Users(user_id),
-    Primary Key (profile_id)
-);
-
 -- buddy list for each user
 CREATE TABLE specialized_sch.Buddies ( 
     user_id int Not Null,
@@ -37,26 +29,18 @@ CREATE TABLE specialized_sch.Buddies (
 -- each user profile has its own wall
 CREATE TABLE specialized_sch.Wall (
     wall_id int Not Null,
-    wall_content_id int,
-    Foreign Key (wall_id) References Profile(profile_id),
+    comment_id int UNIQUE,
+    Foreign Key (wall_id) References Users(user_id),
     Primary Key (wall_id)
 );
 
-CREATE TABLE specialized_sch.Contents (
-    content_id int,
-    mentinoner_user_id int,
-    content_comment_id int,
-    Foreign Key (content_id) References Wall(wall_id),
-    Primary Key (content_id)
-);
-
 CREATE TABLE specialized_sch.Comment (
-    comment_id int,
-    commenter_user_id int,
-    comment_string varchar(255),
-    comment_creation_date Timestamp,
-    comment_edited_date Timestamp,
-    Foreign Key (comment_id) References Contents(content_id),
+    comment_id int Not Null,
+    commenter_user_id int Not Null,
+    comment_content varchar(255) Not Null,
+    comment_creation_date Timestamp Not Null,
+    comment_edited_date Timestamp Not Null,
+    Foreign Key (comment_id) References Wall(comment_id),
     Primary Key (comment_id)
 );
 
